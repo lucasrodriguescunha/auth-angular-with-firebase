@@ -1,0 +1,30 @@
+<!-- Título "Criar conta" -->
+<h1>Criar conta</h1>
+
+<!-- Verifica se há uma mensagem de erro e a exibe dentro de uma div, se presente -->
+@if (errorMessage) {
+  <div>{{ errorMessage }}</div> <!-- Exibe a mensagem de erro aqui -->
+}
+
+<!-- Formulário de registro -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <!-- Campo de entrada para o nome de usuário -->
+  <div>
+    <input type="text" placeholder="Username" formControlName="username" />
+  </div>
+
+  <!-- Campo de entrada para o email -->
+  <div>
+    <input type="text" placeholder="Email" formControlName="email" />
+  </div>
+
+  <!-- Campo de entrada para a senha -->
+  <div>
+    <input type="password" placeholder="Password" formControlName="password" />
+  </div>
+
+  <!-- Botão para enviar o formulário de registro -->
+  <div>
+    <button type="submit">Registrar</button>
+  </div>
+</form>

@@ -1,0 +1,29 @@
+<!-- Exibe o título "Login" em um cabeçalho de primeiro nível -->
+<h1>Login</h1>
+
+<!-- Verifica se há uma mensagem de erro e a exibe dentro de uma div, se presente -->
+@if (errorMessage) {
+<div>{{ errorMessage }}</div>
+<!-- Exibe a mensagem de erro aqui -->
+}
+
+<!-- Formulário de login -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <!-- Contêiner para o campo de entrada de email -->
+  <div>
+    <!-- Campo de entrada para o email, vinculado ao formulário pelo nome 'email' -->
+    <input type="text" placeholder="Email" formControlName="email" />
+  </div>
+
+  <!-- Contêiner para o campo de entrada de senha -->
+  <div>
+    <!-- Campo de entrada para a senha, vinculado ao formulário pelo nome 'password' -->
+    <input type="password" placeholder="password" formControlName="password" />
+  </div>
+
+  <!-- Contêiner para o botão de envio do formulário -->
+  <div>
+    <!-- Botão para enviar o formulário -->
+    <button type="submit">Entrar</button>
+  </div>
+</form>
