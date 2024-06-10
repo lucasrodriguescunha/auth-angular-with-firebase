@@ -11,7 +11,7 @@
 @if (authService.currentUserSig()) {
 <div>
   <!-- Exibe o nome de usuário do usuário logado -->
-  {{ authService.currentUserSig()?.username }}
+  <span>{{ authService.currentUserSig()?.username?.toUpperCase() }}</span>
   <!-- Botão para fazer logout -->
   <span (click)="logout()">Sair</span>
 </div>
